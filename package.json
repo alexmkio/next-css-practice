@@ -1,5 +1,6 @@
 {
   "name": "next-css-practice",
+  "homepage": "https://next-css-practice.vercel.app/",
   "private": true,
   "scripts": {
     "dev": "next dev",
