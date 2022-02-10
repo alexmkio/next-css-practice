@@ -1,0 +1,48 @@
+@use './variables';
+
+$primary-color: lime;
+$secondary-color: red;
+
+@mixin flexy($justify-direction) {
+  display: flex;
+  justify-content: $justify-direction;
+}
+
+.sass_variables {
+  background-color: $primary-color;
+}
+
+.sass_nesting {
+  p {
+    background-color: $secondary-color;
+  }
+}
+
+.sass_partial {
+  background-color: variables.$grey-dark;
+  color: variables.$blue-light;
+}
+
+.sass_mixin {
+  @include flexy(center);
+}
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+.sass_function {
+  background-color: invert($primary-color, 60%);
+}
+
+.sass {
+  border: 1px #f00;
+  background-color: yellow;
+}
+
+.sass_extended {
+  @extend .sass;
+  border-width: 5px;
+  border-style: dashed;
+}
